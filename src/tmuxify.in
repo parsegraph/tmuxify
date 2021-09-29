@@ -16,7 +16,9 @@ elif test -f $1; then
     fi
 else
     echo "Command not recognized" >&2
-    COMMAND=help
+    echo >&2
+    $TMUXIFY_ROOT/help >&2
+    exit 1
 fi
 
 source $TMUXIFY_ROOT/functions.sh || die "Failed to init tmuxify"
