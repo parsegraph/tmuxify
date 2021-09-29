@@ -41,7 +41,7 @@ The following is an example tmuxify.sh
     # Path of the tmux executable
     export TMUX=/usr/bin/tmux
 
-    # Path to the tmux server socket.
+    # If provided, path to the tmux server socket.
     #export TMUX_SOCKET=$SITE_PATH/tmux.socket
 
     # If provided, use this for tmuxify open. localhost at this port will be opened in a browser.

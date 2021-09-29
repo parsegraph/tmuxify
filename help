@@ -2,8 +2,8 @@
 cat - <<EOF
 tmuxify [./tmuxify.sh] <command>
 
-Runs tmuxify, managing a tmux server at TMUX_SOCKET running
-the scripts in the SITE_PANES directory.
+Runs tmuxify, managing a tmux window running the scripts in the SITE_PANES
+directory.
 
 attach     Attaches to the existing tmux server, if any.
 cmd        Runs a tmux command
@@ -21,6 +21,6 @@ SITE_NAME   name of the site
 SITE_PATH   path to the site
 SITE_PANES  path containing site's scripts to run
 TMUX        path to tmux executable
-TMUX_SOCKET path to tmux server socket
+TMUX_SOCKET optional, path to custom tmux server socket
 SITE_PORT   optional, port to use for tmuxify open
 EOF
