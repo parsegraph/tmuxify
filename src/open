@@ -6,4 +6,12 @@ if test $# -gt 0; then
     shift
 fi
 test -n "$SITE_PORT" || die "SITE_PORT is not defined"
-xdg-open https://`hostname`:$SITE_PORT &>/dev/null
+
+URL="https://`hostname`:$SITE_PORT"
+
+TRIES=30
+while test $TRIES -gt 0 && ! curl -k --fail-with-body $URL &>/dev/null; do
+    sleep 1
+    let TRIES--
+done
+xdg-open $URL &>/dev/null
