@@ -68,26 +68,44 @@ Starts the site if it's not running, attaches, and opens a window.
 
 Arguments are passed to each script.
 
+Aliases: run, go, up
+
 ### tmuxify stop
 Terminates all panes and closes the tmux window.
+
+Aliases: down, kill, rm
 
 ### tmuxify restart [args...]
 Stops the site and starts it again.
 
 Arguments are passed to each script.
 
+Alias: rs
+
 ### tmuxify attach
 Attaches to the existing tmux server, if any. This will open tmux in your
 terminal, connected to the site.
 
+Alias: a, at, att
+
 ### tmuxify open
 Opens a browser window to the root site using xdg-open, if SITE_PORT is defined.
+
+Alias: o
+
+##### tmuxify is-running
+Checks if the site's tmux server is running. Prints `true` and exits zero if
+the server is running, otherwise prints `false` and exits nonzero.
+
+Alias: st, status
 
 ## tmuxify utility commands
 
 ##### tmuxify cmd <cmd...>
 Runs the given command, like `tmux -S $TMUX_SOCKET <cmd...>`. Useful for managing
 the site's tmux server directly.
+
+Alias: tmux
 
 ##### tmuxify env
 Dumps the site environment used by tmuxify. Used for debugging tmuxify.
@@ -97,6 +115,9 @@ Creates a new tmux window for the project. Used in starting tmux.
 
 Arguments are passed to each script.
 
-##### tmuxify is-running
-Checks if the site's tmux server is running. Prints `true` and exits zero if
-the server is running, otherwise prints `false` and exits nonzero.
+##### tmuxify help
+Show command-line help.
+
+This is shown if an unrecognized command is given.
+
+Alias: info
