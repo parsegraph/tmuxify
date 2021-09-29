@@ -21,4 +21,5 @@ SITE_PANES  optional, path containing site's scripts to run (default: `pwd`/pane
 TMUX        optional, path to tmux executable (default: `which tmux`)
 TMUX_SOCKET optional, path to custom tmux server socket (default: user's default socket)
 SITE_PORT   optional, port to use for tmuxify open (default is undefined)
+SITE_URL    optional, host to use for tmuxify open (default is http://`hostname`:\$SITE_PORT)
 EOF

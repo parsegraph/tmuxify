@@ -55,6 +55,9 @@ fi
 if test -z "$SITE_NAME"; then
     SITE_NAME=`basename $SITE_PATH`
 fi
+if test -z "$SITE_URL"; then
+    SITE_URL="http://`hostname`"
+fi
 test -d $SITE_PATH || die "SITE_PATH must be a directory (SITE_PATH=$SITE_PATH)."
 if ! test -n "$SITE_PANES"; then
     export SITE_PANES=$SITE_PATH/panes

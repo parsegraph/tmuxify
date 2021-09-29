@@ -60,6 +60,9 @@ The following is an example tmuxify.sh
     # Use this for tmuxify open. localhost at this port will be opened in a browser.
     #export SITE_PORT=8080
 
+    # Use this for tmuxify open. This URL will be opened in a browser, with the port appended.
+    #export SITE_URL="https://`hostname`"
+
 If you have multiple tmuxify configurations for a single project, you can specify
 that as the first argument, like `tmuxify tmuxify-dev.sh start`.
 
