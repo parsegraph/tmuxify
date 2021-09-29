@@ -1,0 +1,19 @@
+#!/usr/bin/env -S nodemon -w ./panes/site
+const express = require('express')
+const markdown = require("markdown").markdown;
+const app = express()
+const port = parseInt(process.argv.length > 2 ? process.argv[2] : process.env.SITE_PORT);
+const fs = require("fs");
+
+app.get('/', (req, res) => {
+    const content = fs.readFileSync(process.env.SITE_PATH + "/README.md").toString();
+    res.send(`<html>
+        <head><title>tmuxify</title></head>
+        <body>${markdown.toHTML(content)}</body>
+    </html>
+    `);
+})
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
