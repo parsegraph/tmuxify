@@ -44,3 +44,8 @@ test -n "$SITE_NAME" || die "SITE_NAME must be defined."
 test -n "$SITE_PATH" || die "SITE_PATH must be defined."
 test -d $SITE_PATH || die "SITE_PATH must be defined."
 test -n "$SITE_PANES" || die "SITE_PANES must be provided"
+test -d "$SITE_PANES" || die "SITE_PANES must be a directory"
+
+if test -z `echo $SITE_PANES/*`; then
+    die "No site panes found (SITE_PANES=$SITE_PANES)"
+fi
