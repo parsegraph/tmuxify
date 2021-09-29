@@ -33,6 +33,7 @@ site_tmux_run() {
     site_tmux send-keys -t $SITE_NAME "$*" C-m
 }
 
+export TMUX=/usr/bin/tmux
 test -e $TMUXIFY_CONF && source $TMUXIFY_CONF || die "Failed to load tmuxify configuration"
 test -n "$TMUX" || die "TMUX must be defined."
 test -e $TMUX || die "tmux executable not found (TMUX=$TMUX)"
