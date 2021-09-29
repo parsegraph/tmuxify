@@ -2,4 +2,4 @@
 source $TMUXIFY_ROOT/functions.sh || exit
 export DISPLAY
 export TMUXIFY_ROOT
-$TMUXIFY_ROOT/stop && $TMUXIFY_ROOT/start
+$TMUXIFY_ROOT/stop && $TMUXIFY_ROOT/start $*

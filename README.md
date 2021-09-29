@@ -63,14 +63,18 @@ will be run from the SITE_PATH directory.
 
 The following are the main commands used to manage tmuxify.
 
-### tmuxify start
-Starts the site if it's not running, attaches, and opens a window
+### tmuxify start [args...]
+Starts the site if it's not running, attaches, and opens a window.
+
+Arguments are passed to each script.
 
 ### tmuxify stop
 Terminates all panes and closes the tmux window.
 
-### tmuxify restart
+### tmuxify restart [args...]
 Stops the site and starts it again.
+
+Arguments are passed to each script.
 
 ### tmuxify attach
 Attaches to the existing tmux server, if any. This will open tmux in your
@@ -88,8 +92,10 @@ the site's tmux server directly.
 ##### tmuxify env
 Dumps the site environment used by tmuxify. Used for debugging tmuxify.
 
-##### tmuxify create
+##### tmuxify create [args...]
 Creates a new tmux window for the project. Used in starting tmux.
+
+Arguments are passed to each script.
 
 ##### tmuxify is-running
 Checks if the site's tmux server is running. Prints `true` and exits zero if

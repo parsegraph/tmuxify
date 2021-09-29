@@ -1,4 +1,3 @@
 #!/bin/bash
 source $TMUXIFY_ROOT/functions.sh || exit
-set -e
-site_tmux_create
+site_tmux attach -t $SITE_NAME

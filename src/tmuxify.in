@@ -1,5 +1,5 @@
 #!/bin/bash
-export TMUXIFY_ROOT=`pwd` # Used only in development
+export TMUXIFY_ROOT=`pwd`/src # Used only in development
 export TMUXIFY_CONF=`pwd`/tmuxify.sh
 if test $# -eq 0; then
     COMMAND=start

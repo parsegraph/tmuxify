@@ -5,16 +5,14 @@ tmuxify [./tmuxify.sh] <command>
 Runs tmuxify, managing a tmux window running the scripts in the SITE_PANES
 directory.
 
+start      Starts the site if it's not running, attaches, and opens a window
+restart    Restarts the site
+stop       Stops the site and closes the tmux server
 attach     Attaches to the existing tmux server, if any.
+open       Opens a browser window to the root site
+is-running Returns true and exits zero if the server is running
 cmd        Runs a tmux command
 env        Dumps the site environment used by tmuxify
-create     Creates a new tmux window for the project.
-is-running Returns true and exits zero if the server is running
-stop       Stops the site and closes the tmux server
-open       Opens a browser window to the root site
-restart    Restarts the site
-start      Starts the site if it's not running, attaches, and opens a window
-kill       Alias for kill
 
 tmuxify.sh variables:
 SITE_NAME   name of the site (default: $(basename `pwd`))
