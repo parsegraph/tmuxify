@@ -8,7 +8,7 @@ fi
 test -n "$SITE_PORT" || die "SITE_PORT is not defined"
 
 URL="$SITE_URL:$SITE_PORT"
-TRIES=30
+TRIES=3
 while test $TRIES -gt 0 && ! curl -k --fail-with-body $URL &>/dev/null; do
     sleep 1
     let TRIES--
