@@ -35,6 +35,7 @@ site_tmux_run() {
 
 export TMUX=/usr/bin/tmux
 test -e $TMUXIFY_CONF && source $TMUXIFY_CONF || die "Failed to load tmuxify configuration"
+export TMUX
 test -n "$TMUX" || die "TMUX must be defined."
 test -e $TMUX || die "tmux executable not found (TMUX=$TMUX)"
 test -x $TMUX || die "$TMUX binary is not executable (TMUX=$TMUX)"
