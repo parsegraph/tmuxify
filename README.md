@@ -1,6 +1,6 @@
 # `tmuxify [tmuxify-conf] <command>`
 
-tmuxify runs your site's development scripts in tmux.
+tmuxify runs your site's development scripts in [tmux](https://github.com/tmux/tmux/wiki).
 
 ## How to install tmuxify
 
