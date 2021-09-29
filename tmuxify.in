@@ -18,7 +18,6 @@ else
     COMMAND=run
 fi
 
-test -f $TMUXIFY_CONF || die "$TMUXIFY_CONF must exist"
 source $TMUXIFY_ROOT/functions.sh || die "Failed to init tmuxify"
 
 if test -x $TMUXIFY_ROOT/$COMMAND; then

@@ -24,27 +24,31 @@ restart`.
 
 ## tmuxify configuration
 
-To configure tmuxify, you must create a tmuxify.sh file in your project directory,
-and then create the scripts used for the tmux panes.
+To configure tmuxify, you can create a tmuxify.sh file in your project directory,
+and then create the scripts used for the tmux panes. The tmuxify.sh file is
+optional, but at least one script must be in panes for tmuxify to work.
 
 The following is an example tmuxify.sh
 
     # The site name, used for the tmux session name.
+    # default is the basename of the running directory
     export SITE_NAME=tmuxify
 
     # The absolute directory of the site.
+    # default is the current directory
     export SITE_PATH=$HOME/src/$SITE_NAME
 
     # Directory that contains the scripts used to populate the tmux window.
+    # default is SITE_PATH/panes
     export SITE_PANES=$HOME/src/$SITE_NAME/panes
 
-    # Path of the tmux executable
-    export TMUX=/usr/bin/tmux
+    # Path to a custom tmux executable
+    #export TMUX=/usr/bin/tmux
 
-    # If provided, path to the tmux server socket.
+    # Path to the tmux server socket.
     #export TMUX_SOCKET=$SITE_PATH/tmux.socket
 
-    # If provided, use this for tmuxify open. localhost at this port will be opened in a browser.
+    # Use this for tmuxify open. localhost at this port will be opened in a browser.
     #export SITE_PORT=8080
 
 If you have multiple tmuxify configurations for a single project, you can specify
