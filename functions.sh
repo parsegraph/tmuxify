@@ -21,12 +21,12 @@ site_tmux_create() {
         fi
         site_tmux split-window -v
         site_tmux select-layout even-vertical
-        site_tmux_run `$TMUXIFY_ROOT/env`
+        site_tmux_run `tmuxify env`
         site_tmux_run $pane
     done
     site_tmux select-pane -t 0
     site_tmux_run cd $SITE_PATH
-    site_tmux_run $TMUXIFY_ROOT/env
+    site_tmux_run tmuxify env
 }
 
 site_tmux_has() {
