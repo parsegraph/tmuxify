@@ -2,6 +2,6 @@
 source $TMUXIFY_ROOT/functions.sh || exit
 if ! $TMUXIFY_ROOT/is-running &>/dev/null; then
     $TMUXIFY_ROOT/create $*;
+    $TMUXIFY_ROOT/open $*
 fi
-$TMUXIFY_ROOT/open $* &>/dev/null
 $TMUXIFY_ROOT/attach
