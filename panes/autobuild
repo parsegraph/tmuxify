@@ -1,0 +1,2 @@
+#!/bin/bash
+$SITE_PATH/autodeploy.sh

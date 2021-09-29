@@ -1,3 +1,4 @@
 #!/bin/bash
-source ./tmuxify.sh
+source $TMUXIFY_ROOT/functions.sh || exit
+test -n "$SITE_PORT" || die "SITE_PORT is not defined"
 xdg-open https://`hostname`:$SITE_PORT &>/dev/null

@@ -1,6 +1,5 @@
 #!/bin/bash
 
-export SITE_PORT=10400
 export SITE_NAME=tmuxify
 export SITE_PATH=$HOME/src/tmuxify
 export SITE_PANES=$HOME/src/tmuxify/panes
