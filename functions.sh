@@ -10,7 +10,6 @@ site_tmux() {
     if test -n "$TMUX_SOCKET"; then
         $TMUX -S $TMUX_SOCKET "$@"
     else
-        echo "$TMUX "$@""
         $TMUX "$@"
     fi
 }
