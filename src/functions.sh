@@ -16,7 +16,7 @@ site_tmux() {
 site_tmux_create() {
     site_tmux new-session -s $SITE_NAME -d
     for pane in $SITE_PANES/*; do
-        if ! test -x $pane; then
+        if ! test -f $pane || ! test -x $pane; then
             continue
         fi
         site_tmux split-window -v
