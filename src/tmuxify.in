@@ -15,7 +15,8 @@ elif test -f $1; then
         shift
     fi
 else
-    COMMAND=run
+    echo "Command not recognized" >&2
+    COMMAND=help
 fi
 
 source $TMUXIFY_ROOT/functions.sh || die "Failed to init tmuxify"
