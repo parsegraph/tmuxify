@@ -4,9 +4,9 @@ tmuxify runs your site's development scripts in tmux.
 
 ## How to install tmuxify
 
-Clone this tmuxify repository and run `make` to create `tmuxify`. Copy
-that executable to a directory in your path. If you move the tmuxify
-repository, you must reinstall tmuxify.
+Clone this tmuxify repository and run `make` to create `tmuxify`. Copy that
+executable to a directory in your path. If you move the tmuxify repository, you
+must reinstall tmuxify.
 
 ## How to run tmuxify
 
@@ -75,7 +75,7 @@ terminal, connected to the site.
 ### tmuxify open
 Opens a browser window to the root site using xdg-open, if SITE_PORT is defined.
 
-## Utility Commands
+## tmuxify utility commands
 
 ##### tmuxify cmd <cmd...>
 Runs the given command, like `tmux -S $TMUX_SOCKET <cmd...>`. Useful for managing
