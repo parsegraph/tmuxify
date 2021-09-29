@@ -37,7 +37,7 @@ site_tmux_run() {
     site_tmux send-keys -t $SITE_NAME "$*" C-m
 }
 
-TMUX=tmux
+TMUX=/usr/bin/tmux
 if test -e $TMUXIFY_CONF; then
      source $TMUXIFY_CONF || die "Failed to load tmuxify configuration"
 elif test "$TMUXIFY_CONF" != `pwd`/tmuxify.sh; then
