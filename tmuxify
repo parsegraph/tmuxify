@@ -1,0 +1,29 @@
+#!/bin/bash
+export TMUXIFY_ROOT=$HOME/src/tmuxify
+
+TMUXIFY_CONF=`pwd`/tmuxify.sh
+if test $# -eq 0; then
+    COMMAND=start
+elif test -x $TMUXIFY_ROOT/$1; then
+    COMMAND=$1
+    shift
+elif test -f $1; then
+    TMUXIFY_CONF=$1
+    shift
+    COMMAND=start
+    if test $# -gt 0; then
+        COMMAND=$1
+        shift
+    fi
+else
+    COMMAND=run
+fi
+
+test -f $TMUXIFY_CONF || die "$TMUXIFY_CONF must exist"
+source $TMUXIFY_ROOT/functions.sh || die "Failed to init tmuxify"
+
+if test -x $TMUXIFY_ROOT/$COMMAND; then
+    $TMUXIFY_ROOT/$COMMAND $*
+else
+    $TMUXIFY_ROOT/help
+fi

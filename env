@@ -1,0 +1,6 @@
+#!/bin/bash
+source $TMUXIFY_ROOT/functions.sh || exit
+echo "SITE_PATH is $SITE_PATH"
+echo "SITE_NAME is $SITE_NAME"
+echo "SITE_VAR_PATH is $SITE_VAR_PATH"
+echo "SITE_RUN_PATH is $SITE_RUN_PATH"

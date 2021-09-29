@@ -1,0 +1,18 @@
+#!/bin/bash
+cat - <<EOF
+tmuxify [./tmuxify.sh] <command>
+
+Runs tmuxify, managing a tmux server at SITE_VAR_PATH running
+the scripts in the SITE_PANES directory.
+
+attach     Attaches to the existing tmux server, if any.
+cmd        Runs a tmux command
+env        Dumps the site environment used by tmuxify
+create     Creates a new tmux window for the project.
+is-running Returns true and exits zero if the server is running
+stop       Stops the site and closes the tmux server
+open       Opens a browser window to the root site
+restart    Restarts the site
+start      Starts the site if it's not running, attaches, and opens a window
+kill       Alias for kill
+EOF

@@ -1,0 +1,3 @@
+#!/bin/bash
+source ./tmuxify.sh
+xdg-open https://`hostname`:$SITE_PORT &>/dev/null

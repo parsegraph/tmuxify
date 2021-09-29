@@ -1,0 +1,13 @@
+#!/bin/bash
+source $TMUXIFY_ROOT/functions.sh || exit
+if ! site_tmux_has; then
+    exit
+fi
+i=0
+for pane in `site_tmux list-panes -s -F '#D' -t $SITE_NAME`; do
+    site_tmux select-pane -t $i
+    site_tmux send-keys C-c
+    sleep 0.2
+    let i++
+done
+site_tmux kill-window

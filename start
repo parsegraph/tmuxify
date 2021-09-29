@@ -1,0 +1,6 @@
+#!/bin/bash
+if ! $TMUXIFY_ROOT/is-running &>/dev/null; then
+    $TMUXIFY_ROOT/create;
+fi
+$TMUXIFY_ROOT/open
+$TMUXIFY_ROOT/attach

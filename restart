@@ -1,0 +1,5 @@
+#!/bin/bash
+source ./tmuxify.sh
+export DISPLAY
+export TMUXIFY_ROOT
+$TMUXIFY_ROOT/stop && $TMUXIFY_ROOT/start
