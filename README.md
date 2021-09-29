@@ -1,4 +1,4 @@
-# tmuxify [tmuxify-conf] <command>
+# `tmuxify [tmuxify-conf] <command>`
 
 tmuxify runs your site's development scripts in tmux.
 
