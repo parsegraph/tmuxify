@@ -20,7 +20,16 @@ a browser window should also open, pointing to `https://localhost:$SITE_PORT`
 To exit tmux without stopping your scripts, type `C-b` followed by `d`.
 
 To shut down your server, run `tmuxify stop`. To restart it, run `tmuxify
-restart`.
+restart`. To check if it is running, use `tmuxify is-running`.
+
+`tmuxify start` and `tmuxify restart` will pass any extra arguments to your
+site's pane scripts. You can use this to set run-time configuration. A common
+use-case is passing a different SITE_PORT value to your scripts. The scripts
+can check for this port, and configure their service appropriately at run-time.
+
+`tmuxify start` will open a browser window using the site's root port, which defaults
+to the SITE_PORT environment variable, but will be overridden by the first passed
+argument, if any.
 
 ## tmuxify configuration
 
@@ -59,26 +68,31 @@ for a single pane. The pane will have the tmuxify configuration environment vari
 in its environment, so SITE_PATH and SITE_PORT can be used. The SITE_PANES scripts
 will be run from the SITE_PATH directory.
 
-## Index of tmuxify commands
+## Main tmuxify commands
 
-The following are the main commands used to manage tmuxify.
+The following are the main commands used to manage tmuxify. An alias can be used for
+the command's canonical name:
 
-### tmuxify start [args...]
+    tmuxify rs 8080 # Restart the site using port 8080
+
+### `tmuxify start [site-port] [args...]`
 Starts the site if it's not running, attaches, and opens a window.
 
-Arguments are passed to each script.
+The site port and other arguments are passed to each script. The script's environment
+will be populated with site environment variables. See `tmuxify env` for the list.
 
 Aliases: run, go, up
 
-### tmuxify stop
+### `tmuxify stop`
 Terminates all panes and closes the tmux window.
 
 Aliases: down, kill, rm
 
-### tmuxify restart [args...]
+### `tmuxify restart [site-port] [args...]`
 Stops the site and starts it again.
 
-Arguments are passed to each script.
+The site port and other arguments are passed to each script. The script's environment
+will be populated with site environment variables. See `tmuxify env` for the list.
 
 Alias: rs
 
@@ -88,8 +102,9 @@ terminal, connected to the site.
 
 Alias: a, at, att
 
-### tmuxify open
+### tmuxify open [site-port]
 Opens a browser window to the root site using xdg-open, if SITE_PORT is defined.
+The command-line SITE_PORT overrides the one from the tmuxify configuration.
 
 Alias: o
 
