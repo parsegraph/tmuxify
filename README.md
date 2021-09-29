@@ -63,10 +63,10 @@ The following is an example tmuxify.sh
 If you have multiple tmuxify configurations for a single project, you can specify
 that as the first argument, like `tmuxify tmuxify-dev.sh start`.
 
-The panes are simply executable files in the SITE_PANES directory. Each one is used
-for a single pane. The pane will have the tmuxify configuration environment variables
-in its environment, so SITE_PATH and SITE_PORT can be used. The SITE_PANES scripts
-will be run from the SITE_PATH directory.
+The pane scripts are simply executable files in the SITE_PANES directory. Each
+one is used for a single pane. The SITE_PANES scripts will be run from the
+SITE_PATH directory. The pane will have the tmuxify configuration environment
+variables in its environment, so SITE_PATH and SITE_PORT can be used.
 
 ## Main tmuxify commands
 
@@ -79,7 +79,8 @@ the command's canonical name:
 Starts the site if it's not running, attaches, and opens a window.
 
 The site port and other arguments are passed to each script. The script's environment
-will be populated with site environment variables. See `tmuxify env` for the list.
+will be populated with site environment variables. See "tmuxify configuration" for a list
+of these variables.
 
 Aliases: run, go, up
 
