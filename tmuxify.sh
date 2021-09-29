@@ -1,8 +1,19 @@
 #!/bin/bash
 
+# The site name, used for the tmux session name.
 export SITE_NAME=tmuxify
-export SITE_PATH=$HOME/src/tmuxify
-export SITE_PANES=$HOME/src/tmuxify/panes
-export SITE_VAR_PATH=$SITE_PATH/var
-export SITE_RUN_PATH=$SITE_PATH/etc
-export TMUX=/usr/bin/tmux
+
+# The absolute directory of the site.
+export SITE_PATH=$HOME/src/$SITE_NAME
+
+# Directory that contains the scripts used to populate the tmux window.
+export SITE_PANES=$HOME/src/$SITE_NAME/panes
+
+# Path of the tmux executable
+#export TMUX=/usr/bin/tmux
+
+# Path to the tmux server socket.
+export TMUX_SOCKET=$SITE_PATH/tmux-$SITE_NAME.socket
+
+# If provided, use this for tmuxify open. localhost at this port will be opened in a browser.
+#export SITE_PORT=8080
