@@ -22,8 +22,12 @@ else
 fi
 
 source $TMUXIFY_ROOT/functions.sh || die "Failed to init tmuxify"
+export TMUXIFY_CONF
+export SITE_PANES
+cd $SITE_PATH
 
 if test -x $TMUXIFY_ROOT/$COMMAND; then
+    export TMUXIFY_CONF=`pwd`/tmuxify.sh
     $TMUXIFY_ROOT/$COMMAND $*
 else
     $TMUXIFY_ROOT/help
