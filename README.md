@@ -100,19 +100,19 @@ will be populated with site environment variables. See `tmuxify env` for the lis
 
 Alias: rs
 
-### tmuxify attach
+### `tmuxify attach`
 Attaches to the existing tmux server, if any. This will open tmux in your
 terminal, connected to the site.
 
 Alias: a, at, att
 
-### tmuxify open [site-port]
+### `tmuxify open [site-port]`
 Opens a browser window to the root site using xdg-open, if SITE_PORT is defined.
 The command-line SITE_PORT overrides the one from the tmuxify configuration.
 
 Alias: o
 
-### tmuxify is-running
+### `tmuxify is-running`
 Checks if the site's tmux server is running. Prints `true` and exits zero if
 the server is running, otherwise prints `false` and exits nonzero.
 
@@ -120,21 +120,21 @@ Alias: st, status
 
 ## tmuxify utility commands
 
-#### tmuxify cmd <cmd...>
+#### `tmuxify cmd <cmd...>`
 Runs the given command, like `tmux -S $TMUX_SOCKET <cmd...>`. Useful for managing
 the site's tmux server directly.
 
 Alias: tmux
 
-#### tmuxify env
+#### `tmuxify env`
 Dumps the site environment used by tmuxify. Used for debugging tmuxify.
 
-#### tmuxify create [args...]
+#### `tmuxify create [args...]`
 Creates a new tmux window for the project. Used in starting tmux.
 
 Arguments are passed to each script.
 
-#### tmuxify help
+#### `tmuxify help`
 Show command-line help.
 
 This is shown if an unrecognized command is given.
