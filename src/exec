@@ -1,0 +1,10 @@
+#!/bin/bash
+source $TMUXIFY_ROOT/functions.sh || exit
+export SITE_PATH=$SITE_PATH
+export SITE_NAME=$SITE_NAME
+export SITE_PANES=$SITE_PANES
+export SITE_URL=$SITE_URL
+export SITE_PORT=$SITE_PORT
+export TMUX=$TMUX
+export TMUX_SOCKET=$TMUX_SOCKET
+$*
