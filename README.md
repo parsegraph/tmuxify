@@ -10,7 +10,7 @@ must reinstall tmuxify.
 
 ## How to run tmuxify
 
-1. Make scripts in a panes/ directory to build and run your project.
+1. Make scripts in a tmuxify.d/ directory to build and run your project.
 2. Create a tmuxify.sh using the example below.
 3. `tmuxify start` to start the tmux server.
 
@@ -35,7 +35,7 @@ argument, if any.
 
 To configure tmuxify, you can create a tmuxify.sh file in your project directory,
 and then create the scripts used for the tmux panes. The tmuxify.sh file is
-optional, but at least one script must be in panes for tmuxify to work.
+optional, but at least one script must be in the panes directory for tmuxify to work.
 
 The following is an example tmuxify.sh
 
@@ -48,8 +48,8 @@ The following is an example tmuxify.sh
     export SITE_PATH=$HOME/src/$SITE_NAME
 
     # Directory that contains the scripts used to populate the tmux window.
-    # default is SITE_PATH/panes
-    export SITE_PANES=$HOME/src/$SITE_NAME/panes
+    # default is SITE_PATH/tmuxify.d
+    export SITE_PANES=$HOME/src/$SITE_NAME/tmuxify.d
 
     # Path to a custom tmux executable
     #export TMUX=/usr/bin/tmux
