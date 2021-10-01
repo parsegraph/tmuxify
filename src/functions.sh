@@ -75,10 +75,10 @@ if test -z "$SITE_PANES"; then
     pushd . >/dev/null || die "Failed to find site panes"
     while test `pwd` != '/'; do
         # Stop if panes directory is found and we can use this directory as root
-        if test -d panes; then
+        if test -d tmuxify.d; then
             SITE_PATH=`pwd`
             SITE_NAME=`basename $SITE_PATH`
-            SITE_PANES=$SITE_PATH/panes
+            SITE_PANES=$SITE_PATH/tmuxify.d
             break;
         fi
         cd ..

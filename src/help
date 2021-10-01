@@ -17,7 +17,7 @@ env        Dumps the site environment used by tmuxify
 tmuxify.sh variables:
 SITE_NAME   name of the site (default: $(basename `pwd`))
 SITE_PATH   path to the site (default: `pwd`)
-SITE_PANES  optional, path containing site's scripts to run (default: `pwd`/panes)
+SITE_PANES  optional, path containing site's scripts to run (default: `pwd`/tmuxify.d)
 TMUX        optional, path to tmux executable (default: `which tmux`)
 TMUX_SOCKET optional, path to custom tmux server socket (default: user's default socket)
 SITE_PORT   optional, port to use for tmuxify open (default is undefined)
