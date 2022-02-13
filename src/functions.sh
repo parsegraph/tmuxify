@@ -19,16 +19,14 @@ site_tmux_create() {
         if ! test -f $pane || ! test -x $pane; then
             continue
         fi
-        site_tmux split-window -v
-        site_tmux select-layout even-vertical
+        site_tmux split-window
+        site_tmux select-layout tiled
         site_tmux_run `tmuxify env`
         site_tmux_run echo "Pane arguments=[$*]"
         site_tmux_run $pane $*
     done
-    site_tmux select-pane -t 0
-    site_tmux_run cd $SITE_PATH
-    site_tmux_run tmuxify env
-    site_tmux_run echo "Pane arguments=[$*]"
+    site_tmux kill-pane -t 0
+    site_tmux select-layout tiled
 }
 
 site_tmux_has() {
