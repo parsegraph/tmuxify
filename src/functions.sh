@@ -68,6 +68,9 @@ fi
 if test -z "$SITE_URL"; then
     SITE_URL="http://`hostname`"
 fi
+if test -z "$TMUX_SOCKET"; then
+    TMUX_SOCKET=$SITE_PATH/tmuxify.socket
+fi
 test -d $SITE_PATH || die "SITE_PATH must be a directory (SITE_PATH=$SITE_PATH)."
 if test -z "$SITE_PANES"; then
     pushd . >/dev/null || die "Failed to find site panes"
