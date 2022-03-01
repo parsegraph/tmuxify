@@ -5,7 +5,7 @@ if test $# -gt 0; then
     SITE_PORT=$1
     shift
 fi
-test -n "$SITE_PORT" || die "SITE_PORT is not defined"
+test -n "$SITE_PORT" || exit
 
 if echo $SITE_URL | grep -q -E -e '/$'; then
 URL="$SITE_URL"
